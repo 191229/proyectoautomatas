@@ -1,4 +1,4 @@
-import '../assets/stylesheets/Baner.css'
+import '../../../assets/stylesheets/Baner.css'
 
 function Baner(){
 
