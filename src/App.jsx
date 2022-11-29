@@ -1,21 +1,22 @@
 import { useState } from 'react'
-import NavBar from './components/nav-bar'
+import NavBar from './components/modules/particiones/nav-bar'
+import Baner from './components/modules/particiones/banner'
+import Footer from './components/modules/particiones/footer'
+import Cuerpo from './components/modules/particiones/body'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <><NavBar />
+    <>
+    <NavBar />
     
-    <div className="Baner">
-      <h1>Particiones</h1>
-      <p>Sea A  un conjunto y C  una colección finita de conjuntos. Se dice cubrimiento de A  por C  cuando la unión de los conjuntos de la colección C  incluye a todos los elementos de A </p>
-    </div>
-    
-    
+    <Baner />
 
+    <Cuerpo/>
     
+    <Footer />
     </>
 
   )
