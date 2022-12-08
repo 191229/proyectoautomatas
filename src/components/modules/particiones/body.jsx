@@ -1,12 +1,22 @@
 import '../../../assets/stylesheets/body.css'
-import preguntas from '../../../router/preguntas'
-import Respuesta from './respuesta'
-import { useQuery } from '@tanstack/react-query'
-import {getParticiones } from '../../../api/Api'
+import { useQuery } from '@tanstack/react-query';
 
 import {useState, useEffect} from 'react';
+import { getParticiones } from '../../../api/Api';
 
 function Cuerpo(){
+    
+
+
+    const {isLoading, data, isError, error} = useQuery({
+      queryKey: ['conjunto'],
+      queryFn: getParticiones
+    })
+
+    if (isLoading) return <div>Loading...</div>
+    else if (isError) return <div>Error: {error.message}</div>
+
+
     const preguntas = [
         {
             titulo: "Dado el conjunto: ",
@@ -20,25 +30,16 @@ function Cuerpo(){
     
     ]
 
-
     const [preguntaActual, setPreguntaActual] = useState(0);
     const [puntuación, setPuntuacion] = useState(0);
     const [isFinished, setIsFinished] = useState(false);
 
-    const {isLoading, data, isError, error} = useQuery({
-        queryKey: ['particion'],
-        queryFn: getParticiones
-    })
-    if (isLoading) return <div>Loading...</div>
-    else if (isError) return <div>Error: {error.message}</div>
-
     return(
         <>
-
         <div className="container">
         <div className="lado-izquierdo">
                 <div className="pregunta-numero">
-                    <span>Pregunta {preguntaActual + 1} de</span> {preguntas.length}
+                    <button className='exam'>Generar conjunto aleatorio</button>
                     <div className="titulo-pregunta">{preguntas[preguntaActual].titulo},{data}</div>
                 </div>
             </div>
@@ -49,8 +50,10 @@ function Cuerpo(){
                 ))  }
             </div>
         </div>
-        
-        <div className="container">
+         {/* seccion del formulario */}
+
+         <form action="">
+         <div className="container">
         <div className="lado-izquierdo">
                 <div className="pregunta-numero">
                     <span>Pregunta {preguntaActual + 1} de</span> {preguntas.length}
@@ -59,8 +62,8 @@ function Cuerpo(){
             </div>
 
             <div className="lado-derecho">
-
-                <input className='input' type="text" />
+                {/* input que mandara el conjunto */}
+                <input className='input' type="text" id='conjunto'/>
                 <button type="button" className='quiz' data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar respuesta</button>
                 
             </div>
@@ -85,6 +88,8 @@ function Cuerpo(){
 </div>
 
         </div>
+         </form>
+        
 
         
         <div className="container">

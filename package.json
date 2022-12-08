@@ -6,16 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "proxy": "http://127.0.0.1:8000"
+    "preview": "vite preview"
+    
   },
   "dependencies": {
     "@tanstack/react-query": "^4.19.1",
     "@tanstack/react-query-devtools": "^4.19.1",
-    "axios": "^1.2.0",
+    "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
