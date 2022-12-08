@@ -14,13 +14,13 @@ import axios from 'axios'
 // }
 
 const particionesAPI = axios.create({
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: 'http://127.0.0.1:8000/',
     headers: {
         'Access-Control-Allow-Origin': '*',
     }
 })
 
 export const getParticiones = async() =>{
-    const res = await particionesAPI.get('/home')
+    const res = await particionesAPI.get('/particion')
     return res.data
 }
