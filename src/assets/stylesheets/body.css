@@ -84,6 +84,22 @@
   
 }
 
+.exam{
+  width: 60%;
+  height: 50px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1488CC;
+  border-radius: 5px;
+  display: flex;
+  padding: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #1488CC;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
 .tiempo-restante {
   font-size: 14px;
   color: #fcbf3d;
