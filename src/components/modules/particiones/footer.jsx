@@ -13,7 +13,7 @@ function Footer(){
             </div>
             <div class ="seccion">
                 <h2 class="title-2">SOBRE NOSOTROS</h2>
-                <p class="text">Apartado elabaorado por los alumnos Ricardo, Eduardo, Yhander y Gamaliel de Septimo cuatrimestre de 
+                <p class="text">Apartado elabaorado por los alumnos Ricardo, Eduardo, Yhander y Alonso de Septimo cuatrimestre de 
                     la carrera de Ingenieria en Desarrollo de Software.
                  </p>
                 <p class="text">En esta sección el alumno podrá practicar de la teoria de conjuntos 
